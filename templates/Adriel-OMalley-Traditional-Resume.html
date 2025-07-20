@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adriel Gerard O'Malley - Resume</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        @page {
+            size: A4;
+            margin: 2cm;
+        }
+
+        body {
+            font-family: 'Garamond', 'Times New Roman', serif;
+            line-height: 1.6;
+            color: #000;
+            background: #fff;
+            font-size: 10.5pt;
+            max-width: 8.5in;
+            margin: 0 auto;
+            padding: 1in;
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .name {
+            font-size: 18pt;
+            font-weight: bold;
+            margin-bottom: 5px;
+            letter-spacing: 1px;
+        }
+
+        .contact-info {
+            font-size: 10pt;
+            margin-bottom: 10px;
+        }
+
+        .contact-info div {
+            margin-bottom: 2px;
+        }
+
+        .section {
+            margin-bottom: 25px;
+        }
+
+        .section-title {
+            font-size: 10.5pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-bottom: 1px solid #000;
+            padding-bottom: 2px;
+            margin-bottom: 15px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 3px;
+        }
+
+        .job-title {
+            font-weight: bold;
+            font-size: 10.5pt;
+        }
+
+        .job-date {
+            font-weight: bold;
+            font-size: 10.5pt;
+            white-space: nowrap;
+        }
+
+        .company-location {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+
+        .company {
+            font-weight: bold;
+            font-size: 10.5pt;
+        }
+
+        .location {
+            font-size: 10.5pt;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-left: 18pt;
+            margin-bottom: 15px;
+        }
+
+        .achievements li {
+            position: relative;
+            margin-bottom: 5px;
+            text-align: justify;
+            line-height: 1.5;
+        }
+
+        .achievements li:before {
+            content: "•";
+            position: absolute;
+            left: -12pt;
+            font-weight: bold;
+        }
+
+        .education-item {
+            margin-bottom: 8px;
+        }
+
+        .education-item .degree {
+            font-weight: bold;
+            display: inline;
+        }
+
+        .education-item .institution {
+            display: inline;
+        }
+
+        .skills-section {
+            text-align: justify;
+            line-height: 1.6;
+        }
+
+        .competencies-section {
+            margin-bottom: 15px;
+        }
+
+        .competency-item {
+            margin-bottom: 8px;
+            text-align: justify;
+        }
+
+        .competency-title {
+            font-weight: bold;
+            display: inline;
+        }
+
+        .competency-content {
+            display: inline;
+        }
+
+        .professional-summary {
+            text-align: justify;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        @media print {
+            body {
+                padding: 0;
+            }
+            
+            .section {
+                page-break-inside: avoid;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 0.5in;
+                font-size: 10pt;
+            }
+            
+            .job-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .company-location {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="name">ADRIEL GERARD O'MALLEY</div>
+        <div class="contact-info">
+            <div>Toronto, ON | (647) 784-6126</div>
+            <div>adrielgomalley@gmail.com</div>
+            <div>LinkedIn: linkedin.com/in/adrielomalley | GitHub: github.com/Agentoma</div>
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Professional Summary</div>
+        <div class="professional-summary">
+            PMP-certified Program Manager with 10+ years leading complex AI/ML initiatives and infrastructure projects. MMAI graduate with expertise in developing predictive models using Python, SQL, and machine learning algorithms on cloud platforms (GCP, Azure). Proven success managing cross-functional teams using agile and waterfall methodologies. Expert in project management tools (MS Project) and data visualization platforms (Tableau) to drive measurable business outcomes. Uniquely positioned to bridge traditional project management with cutting-edge GenAI implementation and strategic AI adoption at enterprise scale.
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Relevant Work Experience</div>
+        
+        <div class="job-header">
+            <div class="job-title">AI Consultant</div>
+            <div class="job-date">September 2024 – April 2025</div>
+        </div>
+        <div class="company-location">
+            <div class="company">Loblaw Limited Canada</div>
+            <div class="location">Toronto, Ontario</div>
+        </div>
+        <ul class="achievements">
+            <li>Led development and deployment of predictive AI models using Python (pandas, scikit-learn), SQL, and ML algorithms including Random Forest, XGBoost, and Logistic Regression on Google Cloud Platform to reduce fleet downtime by 15%</li>
+            <li>Managed cross-functional AI implementation teams using Basecamp/Jira/Notion (Agile) methodologies and data-driven decision making to optimize model performance, resulting in 20% improvement in prediction accuracy</li>
+            <li>Translated complex AI insights into executive-ready business strategy, creating Tableau dashboards and visualizations that drove senior leadership adoption of AI-driven decision making</li>
+            <li>Conducted exploratory data analysis and feature engineering to optimize model performance, resulting in 20% improvement in prediction accuracy</li>
+        </ul>
+
+        <div class="job-header">
+            <div class="job-title">Major Maintenance Project Manager</div>
+            <div class="job-date">May 2019 – May 2024</div>
+        </div>
+        <div class="company-location">
+            <div class="company">Ontario Clean Water Agency (OCWA)</div>
+            <div class="location">Toronto, Ontario</div>
+        </div>
+        <ul class="achievements">
+            <li>Directed $3M annual program portfolio for critical provincial infrastructure, managing full project lifecycle using MS Project 2016 and agile methodologies across 2 Level IV water treatment facilities and 13 pumping stations</li>
+            <li>Engaged strategic partners, contractors, and government stakeholders, utilizing Confluence for documentation and Microsoft Teams for stakeholder communication to ensure transparent program delivery</li>
+            <li>Implemented robust program monitoring and reporting systems, providing data-driven metrics that proved 20% improvement in delivery efficiency and enhanced operational performance</li>
+            <li>Supervised contractor deliverables and SLAs, managing risk mitigation strategies and budget control processes within complex regulatory environments</li>
+        </ul>
+
+        <div class="job-header">
+            <div class="job-title">Procurement Department Manager</div>
+            <div class="job-date">October 2016 – May 2019</div>
+        </div>
+        <div class="company-location">
+            <div class="company">BSC Canada</div>
+            <div class="location">Toronto, Ontario</div>
+        </div>
+        <ul class="achievements">
+            <li>Orchestrated $10M procurement strategy, facilitating collaborations with advanced manufacturing and technology industry players to drive 11% annual cost savings through data-driven sourcing decisions</li>
+            <li>Led cross-functional team of 3 purchasing agents, implementing performance tracking systems and strategic partnership development that increased revenue by $4M through optimized supplier relationships</li>
+            <li>Developed and implemented cost reduction programs, achieving 5% reduction in warehousing and transportation costs in single quarter through process optimization and technology adoption</li>
+        </ul>
+
+        <div class="job-header">
+            <div class="job-title">Estate Project Manager</div>
+            <div class="job-date">May 2014 – August 2016</div>
+        </div>
+        <div class="company-location">
+            <div class="company">British Embassy to Brazil</div>
+            <div class="location">Brasilia, Brazil</div>
+        </div>
+        <ul class="achievements">
+            <li>Directed a $3M international strategic program, interfacing with diplomatic and government officials across five cities</li>
+            <li>Developed and spearheaded adoption of a new technology solution ('CLICKS' software), delivering over $10,000 in monthly savings</li>
+            <li>Co-chaired program processes and evaluation tools for a "Green Embassy" initiative, providing clear metrics on cost savings and impact</li>
+        </ul>
+
+        <div class="job-header">
+            <div class="job-title">Agile Project Manager</div>
+            <div class="job-date">May 2013 – May 2014</div>
+        </div>
+        <div class="company-location">
+            <div class="company">B2T - Business to Technology</div>
+            <div class="location">Brasilia, Brazil</div>
+        </div>
+        <ul class="achievements">
+            <li>Led the development and commercialization of Arrowbus software, managing the program from concept to launch and sale to five major clients</li>
+            <li>Drove technology adoption by leading education and awareness initiatives, training over 100 public servants</li>
+        </ul>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Education</div>
+        
+        <div class="education-item">
+            <span class="degree">Master of Management in Artificial Intelligence (MMAI)</span> | Schulich School of Business, York University, Toronto
+        </div>
+        <div style="margin-bottom: 8px; font-size: 9pt; margin-left: 18pt;">Dean's Entrance Scholarship Recipient | GPA: 3.71/4.0 | May 2024 – April 2025</div>
+        
+        <div class="education-item">
+            <span class="degree">Master of Business Administration (MBA), Project Management</span> | Fundação Getulio Vargas, Brazil
+        </div>
+        <div style="margin-bottom: 8px; font-size: 9pt; margin-left: 18pt;">September 2012 – June 2014</div>
+        
+        <div class="education-item">
+            <span class="degree">Post-Graduate Certificate, Supply Chain Management</span> | George Brown College, Toronto
+        </div>
+        <div style="margin-bottom: 8px; font-size: 9pt; margin-left: 18pt;">Completed 2016</div>
+        
+        <div class="education-item">
+            <span class="degree">Bachelor of Business Administration (BBA)</span> | University of Brasília, Brazil
+        </div>
+        <div style="margin-bottom: 8px; font-size: 9pt; margin-left: 18pt;">Honours Degree | Specialization: Marketing and Business Innovation | December 2008 – June 2012</div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Skills Summary</div>
+        <div class="skills-section">
+            Python, SQL, APIs (Application Programming Interface), Microsoft Visual Studio Code (VS Code), Qualtrics, Excel VBA (Visual Basics for Application), Microsoft Office Suite (Word, Outlook, PowerPoint, Excel), Microsoft Power Query, Power Pivot, Oracle Cloud Supply Chain Management (Oracle SCM), Strategy Planning, Slide-Deck preparations, Large Language Models & Agentic Frameworks, Tableau, Microsoft Azure (AI Foundry, Resource Groups, Permissions, Cost Management), Model Context Protocol, Machine Learning, Google Cloud Platform, XGBoost, Random Forest, Deep Learning, Agile, Scrum, MS Project
+        </div>
+    </div>
+
+    <div class="section">
+        <div class="section-title">Core Competencies & Certifications</div>
+        <div class="competencies-section">
+            <div class="competency-item">
+                <span class="competency-title">Program Management:</span> 
+                <span class="competency-content">Strategic Planning, Stakeholder Engagement, Program Monitoring & Reporting, Budget & Cost Control, Proposal Support, Industry-Academic Collaboration, Partnership Development.</span>
+            </div>
+            <div class="competency-item">
+                <span class="competency-title">Technologies & Data:</span> 
+                <span class="competency-content">AI/ML, Data Analytics, Python, SQL, GCP, Technology Commercialization, Agile, SDLC.</span>
+            </div>
+            <div class="competency-item">
+                <span class="competency-title">Certifications & Languages:</span> 
+                <span class="competency-content">PMP, PRINCE2®, PSM I | Fluent English & Portuguese, Basic Spanish.</span>
+            </div>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 30px; font-size: 9pt; color: #666;">
+        Available for immediate start | Open to hybrid work arrangements | Authorized to work in Canada
+    </div>
+</body>
+</html>

@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adriel Gerard O'Malley - Resume</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #3b82f6;
+            --text-dark: #1f2937;
+            --text-light: #6b7280;
+            --background-light: #f8fafc;
+            --white: #ffffff;
+            --border-color: #e5e7eb;
+        }
+
+        @page {
+            size: A4;
+            margin: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            background: var(--white);
+            font-size: 14px;
+        }
+
+        .container {
+            display: flex;
+            min-height: 100vh;
+            max-width: 1200px;
+            margin: 0 auto;
+            background: var(--white);
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 300px;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+            color: var(--white);
+            padding: 40px 30px;
+            position: relative;
+        }
+
+        .sidebar::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(10px);
+        }
+
+        .sidebar-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .profile-section {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .profile-photo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            background: rgba(255,255,255,0.1);
+            margin: 0 auto 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 3px solid rgba(255,255,255,0.2);
+            overflow: hidden;
+            position: relative;
+        }
+
+        .profile-photo img {
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            object-position: center center;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+
+        .profile-photo i {
+            font-size: 48px;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .name {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+            letter-spacing: -0.5px;
+        }
+
+        .title {
+            font-size: 16px;
+            font-weight: 400;
+            opacity: 0.9;
+            margin-bottom: 20px;
+        }
+
+        .contact-info {
+            margin-bottom: 40px;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            font-size: 13px;
+        }
+
+        .contact-item i {
+            width: 18px;
+            margin-right: 12px;
+            opacity: 0.8;
+        }
+
+        .contact-item a {
+            color: var(--white);
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+
+        .contact-item a:hover {
+            opacity: 0.8;
+        }
+
+        .sidebar-section {
+            margin-bottom: 35px;
+        }
+
+        .sidebar-section h3 {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            border-bottom: 2px solid rgba(255,255,255,0.2);
+            padding-bottom: 8px;
+        }
+
+        .skill-item {
+            margin-bottom: 15px;
+        }
+
+        .skill-name {
+            font-size: 13px;
+            font-weight: 500;
+            margin-bottom: 5px;
+        }
+
+        .skill-bar {
+            height: 6px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+
+        .skill-progress {
+            height: 100%;
+            background: linear-gradient(90deg, rgba(255,255,255,0.8) 0%, rgba(255,255,255,0.6) 100%);
+            border-radius: 3px;
+            transition: width 0.3s ease;
+        }
+
+        .language-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+            font-size: 13px;
+        }
+
+        .language-level {
+            font-weight: 500;
+            opacity: 0.8;
+        }
+
+        /* Main Content */
+        .main-content {
+            flex: 1;
+            padding: 40px 50px;
+            background: var(--white);
+        }
+
+        .section {
+            margin-bottom: 45px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 25px;
+            position: relative;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+
+        .professional-summary {
+            font-size: 15px;
+            line-height: 1.7;
+            color: var(--text-dark);
+            text-align: justify;
+        }
+
+        .experience-item {
+            margin-bottom: 35px;
+            position: relative;
+            padding-left: 20px;
+        }
+
+        .experience-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--primary-color);
+            border-radius: 50%;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 12px;
+        }
+
+        .job-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 3px;
+        }
+
+        .company {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 500;
+        }
+
+        .date {
+            font-size: 12px;
+            color: var(--text-light);
+            font-weight: 500;
+            white-space: nowrap;
+        }
+
+        .achievements {
+            list-style: none;
+            margin-top: 12px;
+        }
+
+        .achievements li {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--text-dark);
+        }
+
+        .achievements li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        .education-item {
+            margin-bottom: 25px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .education-item::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 8px;
+            width: 8px;
+            height: 8px;
+            background: var(--accent-color);
+            border-radius: 50%;
+        }
+
+        .degree {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--text-dark);
+            margin-bottom: 3px;
+        }
+
+        .institution {
+            font-size: 14px;
+            color: var(--primary-color);
+            font-weight: 500;
+            margin-bottom: 2px;
+        }
+
+        .tech-skills {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 15px;
+        }
+
+        .tech-tag {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            color: var(--white);
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            border: none;
+            cursor: default;
+            transition: transform 0.2s ease;
+        }
+
+        .tech-tag:hover {
+            transform: translateY(-2px);
+        }
+
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .cert-item {
+            background: var(--background-light);
+            padding: 12px 16px;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary-color);
+            font-size: 13px;
+            transition: transform 0.2s ease;
+        }
+
+        .cert-item:hover {
+            transform: translateX(5px);
+        }
+
+        .achievements-section {
+            margin-top: 15px;
+        }
+
+        .achievement-item {
+            margin-bottom: 8px;
+            padding-left: 20px;
+            position: relative;
+            font-size: 13px;
+            line-height: 1.6;
+        }
+
+        .achievement-item::before {
+            content: '★';
+            position: absolute;
+            left: 0;
+            color: var(--primary-color);
+            font-weight: bold;
+        }
+
+        @media print {
+            .container {
+                box-shadow: none;
+            }
+            
+            .sidebar {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+            
+            .tech-tag {
+                -webkit-print-color-adjust: exact;
+                print-color-adjust: exact;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                padding: 30px 20px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <div class="sidebar-content">
+                <div class="profile-section">
+                    <div class="profile-photo">
+                        <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIwIiBoZWlnaHQ9IjEyMCIgdmlld0JveD0iMCAwIDEyMCAxMjAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSIxMjAiIGhlaWdodD0iMTIwIiByeD0iNjAiIGZpbGw9IiNmM2Y0ZjYiLz4KPGNpcmNsZSBjeD0iNjAiIGN5PSI0NSIgcj0iMTgiIGZpbGw9IiM2YjcyODAiLz4KPHBhdGggZD0iTTMwIDEwMGMwLTE2LjU2OSAxMy40MzEtMzAgMzAtMzBzMzAgMTMuNDMxIDMwIDMwSDE2djEwaDE2djEwaDU2di0xMGgxNnYtMTBIMzB6IiBmaWxsPSIjNmI3MjgwIi8+Cjwvc3ZnPgo=" alt="Professional Photo Placeholder" />
+                    </div>
+                    <div class="name">Adriel Gerard O'Malley</div>
+                    <div class="title">AI/ML Program Manager</div>
+                </div>
+
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Toronto, ON</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>(647) 784-6126</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:adrielgomalley@gmail.com">adrielgomalley@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <a href="https://linkedin.com/in/adrielomalley" target="_blank">linkedin.com/in/adrielomalley</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/Agentoma" target="_blank">github.com/Agentoma</a>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Core Skills</h3>
+                    <div class="skill-item">
+                        <div class="skill-name">AI/ML Development</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 95%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Project Management</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 98%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Python & SQL</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 90%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Cloud Platforms</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 85%"></div>
+                        </div>
+                    </div>
+                    <div class="skill-item">
+                        <div class="skill-name">Data Visualization</div>
+                        <div class="skill-bar">
+                            <div class="skill-progress" style="width: 88%"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Languages</h3>
+                    <div class="language-item">
+                        <span>English</span>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Portuguese</span>
+                        <span class="language-level">Fluent</span>
+                    </div>
+                    <div class="language-item">
+                        <span>Spanish</span>
+                        <span class="language-level">Basic</span>
+                    </div>
+                </div>
+
+                <div class="sidebar-section">
+                    <h3>Certifications</h3>
+                    <div style="font-size: 12px; line-height: 1.6;">
+                        <div style="margin-bottom: 8px;">• PMP - Project Management</div>
+                        <div style="margin-bottom: 8px;">• PRINCE2 Foundation</div>
+                        <div style="margin-bottom: 8px;">• Professional Scrum Master</div>
+                        <div style="margin-bottom: 8px;">• TESOL Certification</div>
+                        <div style="margin-bottom: 8px;">• Azure Fundamentals (in progress)</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="main-content">
+            <div class="section">
+                <h2 class="section-title">Professional Summary</h2>
+                <p class="professional-summary">
+                    PMP-certified Program Manager with 10+ years leading complex AI/ML initiatives and infrastructure projects. MMAI graduate with expertise in developing predictive models using Python, SQL, and machine learning algorithms on cloud platforms (GCP, Azure). Proven success managing cross-functional teams using agile and waterfall methodologies. Expert in project management tools (MS Project) and data visualization platforms (Tableau) to drive measurable business outcomes. Uniquely positioned to bridge traditional project management with cutting-edge GenAI implementation and strategic AI adoption at enterprise scale.
+                </p>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Work Experience</h2>
+                
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">AI Consultant</div>
+                            <div class="company">Loblaw Limited Canada | Toronto, Ontario</div>
+                        </div>
+                        <div class="date">Sep 2024 – Apr 2025</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Led development and deployment of predictive AI models using Python (pandas, scikit-learn), SQL, and ML algorithms including Random Forest, XGBoost, and Logistic Regression on Google Cloud Platform to reduce fleet downtime by 15%</li>
+                        <li>Managed cross-functional AI implementation teams using Basecamp/Jira/Notion (Agile) methodologies and data-driven decision making to optimize model performance, resulting in 20% improvement in prediction accuracy</li>
+                        <li>Translated complex AI insights into executive-ready business strategy, creating Tableau dashboards and visualizations that drove senior leadership adoption of AI-driven decision making</li>
+                        <li>Conducted exploratory data analysis and feature engineering to optimize model performance, resulting in 20% improvement in prediction accuracy</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Major Maintenance Project Manager</div>
+                            <div class="company">Ontario Clean Water Agency (OCWA) | Toronto, Ontario</div>
+                        </div>
+                        <div class="date">May 2019 - May 2024</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Directed $3M annual program portfolio for critical provincial infrastructure, managing full project lifecycle using MS Project 2016 and agile methodologies across 2 Level IV water treatment facilities and 13 pumping stations</li>
+                        <li>Engaged strategic partners, contractors, and government stakeholders, utilizing Confluence for documentation and Microsoft Teams for stakeholder communication to ensure transparent program delivery</li>
+                        <li>Implemented robust program monitoring and reporting systems, providing data-driven metrics that proved 20% improvement in delivery efficiency and enhanced operational performance</li>
+                        <li>Supervised contractor deliverables and SLAs, managing risk mitigation strategies and budget control processes within complex regulatory environments</li>
+                    </ul>
+                </div>
+
+                <div class="experience-item">
+                    <div class="job-header">
+                        <div>
+                            <div class="job-title">Procurement Department Manager</div>
+                            <div class="company">BSC Canada | Toronto, Ontario</div>
+                        </div>
+                        <div class="date">Oct 2016 - May 2019</div>
+                    </div>
+                    <ul class="achievements">
+                        <li>Orchestrated $10M procurement strategy, facilitating collaborations with advanced manufacturing and technology industry players to drive 11% annual cost savings through data-driven sourcing decisions</li>
+                        <li>Led cross-functional team of 3 purchasing agents, implementing performance tracking systems and strategic partnership development that increased revenue by $4M through optimized supplier relationships</li>
+                        <li>Developed and implemented cost reduction programs, achieving 5% reduction in warehousing and transportation costs in single quarter through process optimization and technology adoption</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Education</h2>
+                
+                <div class="education-item">
+                    <div class="degree">Master of Management in Artificial Intelligence (MMAI)</div>
+                    <div class="institution">Schulich School of Business, York University | Toronto, ON</div>
+                    <div class="date">May 2024 – Apr 2025</div>
+                    <div style="margin-top: 8px; font-size: 12px; color: var(--text-light);">
+                        Dean's Entrance Scholarship Recipient | GPA: 3.71/4.0
+                    </div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">Master of Business Administration (MBA), Project Management</div>
+                    <div class="institution">Fundação Getulio Vargas | Brazil</div>
+                    <div class="date">Sep 2012 – Jun 2014</div>
+                </div>
+
+                <div class="education-item">
+                    <div class="degree">Bachelor of Business Administration (BBA)</div>
+                    <div class="institution">University of Brasília | Brazil</div>
+                    <div class="date">Dec 2008 – Jun 2012</div>
+                    <div style="margin-top: 8px; font-size: 12px; color: var(--text-light);">
+                        Honours Degree | Specialization: Marketing and Business Innovation
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Technical Skills</h2>
+                <div class="tech-skills">
+                    <span class="tech-tag">Python</span>
+                    <span class="tech-tag">SQL</span>
+                    <span class="tech-tag">Machine Learning</span>
+                    <span class="tech-tag">Google Cloud Platform</span>
+                    <span class="tech-tag">Microsoft Azure</span>
+                    <span class="tech-tag">Tableau</span>
+                    <span class="tech-tag">Power BI</span>
+                    <span class="tech-tag">MS Project</span>
+                    <span class="tech-tag">Agile</span>
+                    <span class="tech-tag">Scrum</span>
+                    <span class="tech-tag">XGBoost</span>
+                    <span class="tech-tag">Random Forest</span>
+                    <span class="tech-tag">Deep Learning</span>
+                    <span class="tech-tag">LLMs</span>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Key Achievements</h2>
+                <div class="achievements-section">
+                    <div class="achievement-item">Successfully delivered AI/ML project reducing operational downtime by 15% through predictive modeling and senior management insights</div>
+                    <div class="achievement-item">Managed $10M+ annual procurement portfolio achieving 11% cost savings through strategic technology partnerships</div>
+                    <div class="achievement-item">Led international program across 5 cities with $3M budget, earning commendation from British Ministry</div>
+                    <div class="achievement-item">Achieved 20% improvement in project delivery efficiency through implementation of data-driven monitoring systems</div>
+                    <div class="achievement-item">Trained 100+ professionals in technology adoption and AI implementation strategies</div>
+                    <div class="achievement-item">Developed proprietary software solution generating $10K+ monthly savings through process automation</div>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 40px; font-size: 12px; color: var(--text-light);">
+                Available for immediate start | Open to hybrid work arrangements | Authorized to work in Canada
+            </div>
+        </div>
+    </div>
+</body>
+</html>
